@@ -147,7 +147,7 @@ Fa0/5       Desg FWD 19        128.5    P2p
 Fa0/1       Desg FWD 19        128.1    P2p
 ```
 
-Where you can see in the third line of the “Root ID¨” section that this is the “Bridge root” or the main root switch.
+Where you can see in the third line of the “Root ID” section that this is the “Bridge root” or the main root switch.
 
 # 8. LAN switches secondary switch
 
