@@ -58,7 +58,7 @@ In the proposed topology each outgoing switch of each department has two outputs
 # 3. Router to the Internet
 
 <p align="center">
-    <img src="resources/router-internet.png" alt="Image of the router that goes to the internet"/>
+    <img src="resources/router-internet.svg" alt="Image of the router that goes to the internet"/>
 </p>
 
 In this case we have the “Main” and “Backup” switches so they will do the inter-VLAN routing so we don't need to have something like a Router-On-A-Stick to do the VLAN routing.
