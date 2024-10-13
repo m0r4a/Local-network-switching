@@ -19,10 +19,10 @@ In the proposed topology each outgoing switch of each department has two outputs
 
 | Department     | Number of LAN switch ports    |
 |--------------- | ----------------------------- |
-| Ventas         | 12                            |
-| Ingeniería 2.1 | 48                            |
-| Ingeniería 2.2 | 12                            |
-| Administración | 24                            |
+| Sales         | 12                            |
+| Engineering 2.1 | 48                            |
+| Engineering 2.2 | 12                            |
+| Administration | 24                            |
 | Marketing      | 48                            |
 
 # 2. Configuration of each LAN switch
@@ -30,22 +30,22 @@ In the proposed topology each outgoing switch of each department has two outputs
 | Switch | Configuration                                    |
 |--------|--------------------------------------------------|
 | 1      | - vlan 10                                        |
-|        | - name ventas                                    |
+|        | - name sales                                    |
 |        | - (Inside each interface towards a computer)     |
 |        |   - switchport mode access                       |
 |        |   - switchport access vlan 10                    |
 | 2.1    | - vlan 20                                        |
-|        | - name ingeniería                                |
+|        | - name engineering                                |
 |        | - (Inside each interface towards a computer)     |
 |        |   - switchport mode access                       |
 |        |   - switchport access vlan 20                    |
 | 2.2    | - vlan 20                                        |
-|        | - name ingeniería                                |
+|        | - name engineering                                |
 |        | - (Inside each interface towards a computer)     |
 |        |   - switchport mode access                       |
 |        |   - switchport access vlan 20                    |
 | 3      | - vlan 30                                        |
-|        | - name administración                            |
+|        | - name administration                            |
 |        | - (Inside each interface towards a computer)     |
 |        |   - switchport mode access                       |
 |        |   - switchport access vlan 30                    |
@@ -61,7 +61,7 @@ In the proposed topology each outgoing switch of each department has two outputs
     <img src="resources/router-internet.png" alt="Image of the router that goes to the internet"/>
 </p>
 
-In this case we have the “Principal” and “Backup” switches so they will do the inter-VLAN routing so we don't need to have something like a Router-On-A-Stick to do the VLAN routing.
+In this case we have the “Main” and “Backup” switches so they will do the inter-VLAN routing so we don't need to have something like a Router-On-A-Stick to do the VLAN routing.
 
 # 4. EtherChannel
 
@@ -93,17 +93,17 @@ Implementing EtherChannel will significantly improve network performance between
 # 5. IP addressing scheme
 
 There will be 4 VLANS:
-  - Ventas: 10 users
-  - Administración: 20 users 
+  - Sales: 10 users
+  - Administration: 20 users 
   - Marketing: 35 users
-  - Ingeniería: 50 users
+  - Engineering: 50 users
 
 
 | Department     | Range of useful IPs                | VLAN number |
 | -------------- | ---------------------------------- | ----------- |
-| Ventas         | 192.168.10.0 - 192.168.10.30       | 10          |
-| Ingeniería     | 192.168.10.128 - 192.168.10.190    | 20          |
-| Administración | 192.168.10.32 - 192.168.10.62      | 30          |
+| Sales         | 192.168.10.0 - 192.168.10.30       | 10          |
+| Engineering     | 192.168.10.128 - 192.168.10.190    | 20          |
+| Administration | 192.168.10.32 - 192.168.10.62      | 30          |
 | Marketing      | 192.168.10.64 - 192.168.10.126     | 40          |
 
 # 6. Gateway and PC masks for each department 
@@ -111,14 +111,14 @@ There will be 4 VLANS:
 
 | Department     |  Gateway      | Mask           |
 | -------------- | ------------- | ----------------- |
-| Ventas         | 192.168.10.1  | 255.255.255.224   |
-| Ingeniería     | 192.168.10.129| 255.255.255.192   |
-| Administración | 192.168.10.33 | 255.255.255.224   |
+| Sales         | 192.168.10.1  | 255.255.255.224   |
+| Engineering     | 192.168.10.129| 255.255.255.192   |
+| Administration | 192.168.10.33 | 255.255.255.224   |
 | Marketing      | 192.168.10.65 | 255.255.255.192   |
 
 # 7. LAN switches main switch
 
-The idea in this topology is that the main switch is the one called “Principal”, the command used to see if the switch is the main switch or not is:
+The idea in this topology is that the main switch is the one called “Main”, the command used to see if the switch is the main switch or not is:
 
 ```
 # show spanning-tree
