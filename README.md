@@ -10,7 +10,7 @@
 ## In a real enviorment
 
 <p align="center">
-    <img src="resources/topology-real.png" alt="Image of the topology in a real-world example"/>
+    <img src="resources/topology-real.svg" alt="Image of the topology in a real-world example"/>
 </p>
 
 # 1. Network redundancy
