@@ -3,7 +3,7 @@
 ## In packet tracer 
 
 <p align="center">
-    <img src="resources/topology-PT.png" alt="Image of the topology in packet tracer"/>
+    <img src="resources/topology-PT.svg" alt="Image of the topology in packet tracer"/>
 </p>
 
 
